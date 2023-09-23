@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none !important;
 }
 
 html {
@@ -55,7 +56,7 @@ body {
 }
 
 .nav-item {
-  margin: 0 20px;
+  margin: 0 30px;
 }
 
 .nav-item a {
@@ -66,6 +67,15 @@ body {
   text-decoration: none;
   color: var(--main-color);
   font-weight: 600;
+}
+
+.bi-person {
+  font-size: 24px;
+}
+
+.bi-bag {
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .user-button-group a:hover {
@@ -113,121 +123,128 @@ body {
 
 /* Hero */
 
-#myHero {
-  margin: 24px 0 0 0;
-}
-
-.swiper {
+.hero-image {
+  position: relative;
   width: 100%;
-  height: 350px;
+  height: 500px;
+  background-image: linear-gradient(#00000084, #00000084),
+    url("../img/hero-img.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   border-radius: 20px;
-  z-index: 1 !important;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+  margin-top: 30px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: end;
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-}
-
-.swiper-pagination-bullet {
-  background-color: var(--button-color) !important;
-  width: 5px !important;
-  height: 5px !important;
-  border-radius: 5px !important;
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--button-color) !important;
-  width: 50px !important;
-  height: 5px !important;
-  border-radius: 5px !important;
-  transition: all 0.5s ease-in-out !important;
+.hero-image h1 {
+  position: absolute;
+  color: var(--heading-color);
+  width: 450px;
+  font-size: 50px;
+  right: 50px;
+  line-height: 80px;
+  text-align: end;
 }
 
 @media only screen and (max-width: 600px) {
-  .swiper {
-    width: 100%;
-    height: 200px;
-  }
-  .swiper-slide img {
+  .hero-image h1 {
     display: block;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 20px;
+    width: 300px;
+    font-size: 44px;
+    text-align: unset;
+    margin: 0 auto;
+    line-height: 65px;
   }
 }
 
 /* Hero End */
 
-/* Top Product */
+/* New Products */
 
-#topProduct .card {
+#newProducts {
+  position: relative;
+  margin: 80px 0;
+}
+
+.filter-button {
+  color: var(--main-color) !important;
+  font-weight: 600;
+}
+
+.active {
+  background-color: var(--button-color) !important;
+  color: var(--heading-color) !important;
+  border-color: var(--button-color) !important;
+}
+
+.product-image {
   width: 100%;
-  min-height: 100%;
-  padding: 20px;
+  max-height: 250px;
+}
+
+#newProducts .card {
   border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.5s ease-in-out;
 }
 
-#topProduct .card:hover {
+#newProducts .card:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  transition: all 0.6s ease-in-out;
 }
 
-#topProduct .card img {
+#newProducts .card .hover-button-group {
+  display: none;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
+
+#newProducts .card:hover .hover-button-group {
+  display: block;
+  opacity: 1;
+  top: 20px;
+  right: 10px;
+}
+
+.add-to-cart {
+  font-size: 16px;
+  background-color: var(--button-color);
+  color: var(--heading-color);
+}
+
+.add-to-cart:hover {
+  background-color: #dc7806;
+  color: var(--heading-color);
+}
+
+/* New Products End */
+
+/* Why Us */
+
+#whyUs .card {
+  position: relative;
   width: 100%;
-  height: 200px;
-  margin-bottom: 10px;
+  height: 100px;
 }
 
-@media only screen and (max-width: 900px) {
-  #topProduct .card {
-    width: 100%;
-    min-height: 90%;
-    padding: 20px;
-    border: none;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  }
-  #topProduct .card {
-    border-radius: 20px;
-  }
-  #topProduct .card img {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-  }
+#whyUs .card:hover i {
+  color: var(--button-color);
+  transition: all 0.5s ease-in-out;
 }
 
-@media only screen and (max-width: 600px) {
-  #topProduct .card {
-    border-radius: 20px;
-  }
-  #topProduct .card img {
-    width: 100%;
-    height: 250px;
-    margin-bottom: 10px;
-  }
+.fa-truck-fast,
+.fa-shop-lock,
+.fa-face-smile {
+  font-size: 46px;
 }
 
-/* Top Product End */
+/* Why Us End */
